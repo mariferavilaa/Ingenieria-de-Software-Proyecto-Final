@@ -1,0 +1,515 @@
+/* All styles for the info pages. Could have had them separated but I tried to use the same elements as much as possible. Didn't work that well. It does work but some optimizations can be made here */
+
+/* Top bar */
+.top-bar{
+	display:flex;
+	align-items:center;
+	gap:16px;
+	justify-content:space-between;
+	margin-bottom:14px;
+}
+
+.top-bar h1{
+	margin:0;
+	color:var(--color-text);
+}
+
+.back-btn{
+	background:transparent;
+	border:none;
+	font-size:20px;
+	cursor:pointer;
+	padding:6px 10px;
+}
+
+.top-links{ display:flex; gap:8px; }
+
+.top-link{
+	background:var(--color-primary);
+	color:#fff;
+	border:none;
+	padding:8px 12px;
+	border-radius:8px;
+	cursor:pointer;
+	font-weight:700;
+}
+
+/* Info sections */
+.info-section{
+	background:var(--color-panel-bg);
+	border-radius:10px;
+	padding:14px;
+	border:1px solid #e6e6e6;
+	margin-bottom:12px;
+}
+
+.info-section p{ margin:8px 0; }
+
+.row-group{
+	display:flex;
+	gap:12px;
+	flex-wrap:wrap;
+}
+
+.row-group p{
+	background:#fff;
+	padding:10px 12px;
+	flex:1 1 180px;
+}
+
+.sub-title{
+	margin-top:8px;
+	margin-bottom:6px;
+	font-size:16px;
+}
+
+/* Action buttons */
+.action-buttons{
+	display:flex;
+	gap:10px;
+	justify-content:flex-end;
+	margin-top:8px;
+}
+
+.delete-btn{
+	background:#ff0000;
+	color: #ffffff;
+	border:1px solid #e6aeb0;
+	padding:10px 14px;
+	border-radius:8px;
+	cursor:pointer;
+}
+
+.edit-btn{
+	background:var(--color-primary);
+	color:#fff;
+	border:none;
+	padding:10px 14px;
+	border-radius:8px;
+	cursor:pointer;
+}
+
+/* Form input styles (for edit page) */
+#form input {
+	background: #fff;
+	border: 1px solid #ddd;
+	padding: 8px 10px;
+	border-radius: 6px;
+	font-size: 14px;
+	width: 100%;
+	box-sizing: border-box;
+}
+
+#form input:focus {
+	outline: none;
+	border-color: var(--color-primary);
+	box-shadow: 0 0 0 2px rgba(79, 114, 255, 0.1);
+}
+
+#form p {
+	display: flex;
+	flex-direction: column;
+	gap: 4px;
+}
+
+#form .row-group p input {
+	width: 100%;
+}
+
+#historial-form input,
+#historial-form textarea,
+.hist-input {
+	background: #fff;
+	border: 1px solid #ddd;
+	padding: 8px 10px;
+	border-radius: 6px;
+	font-size: 14px;
+	width: 100%;
+	box-sizing: border-box;
+	font-family: inherit;
+}
+
+#historial-form input:focus,
+#historial-form textarea:focus,
+.hist-input:focus {
+	outline: none;
+	border-color: var(--color-primary);
+	box-shadow: 0 0 0 2px rgba(79, 114, 255, 0.1);
+}
+
+#historial-form .row-group p input {
+	width: 100%;
+}
+
+/* Confirm/Cancel buttons for edit form */
+.confirm-btn {
+	background: var(--color-primary);
+	color: #fff;
+	border: none;
+	padding: 10px 14px;
+	border-radius: 8px;
+	cursor: pointer;
+	font-weight: 700;
+}
+
+.cancel-btn {
+	background: #fff;
+	color: #333;
+	border: 1px solid #ddd;
+	padding: 10px 14px;
+	border-radius: 8px;
+	cursor: pointer;
+	font-weight: 700;
+}
+
+/* Responsive adjustments */
+@media (max-width: 800px){
+	.page-container{ padding:12px; }
+	.top-bar{ flex-direction:column; align-items:flex-start; gap:8px; }
+	.top-links{ width:100%; display:flex; gap:8px; }
+}
+
+/* ---- STAFF PAGE LAYOUT ---- */
+.staff-container {
+	display: grid;
+	grid-template-columns: 1fr 300px;
+	gap: 24px;
+	margin-top: 18px;
+}
+
+.staff-info {
+	background: var(--color-panel-bg);
+	border-radius: 10px;
+	padding: 14px;
+	border: 1px solid #e6e6e6;
+}
+
+.staff-info p {
+	margin: 8px 0;
+}
+
+.staff-info .row-group {
+	display: flex;
+	gap: 12px;
+	flex-wrap: wrap;
+	margin: 8px 0;
+}
+
+.staff-info .row-group p {
+	background: #fff;
+	padding: 10px 12px;
+	flex: 1 1 140px;
+}
+
+.staff-side {
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+}
+
+.staff-photo {
+	width: 100%;
+	height: 280px;
+	border-radius: 10px;
+	object-fit: cover;
+	border: 1px solid #e6e6e6;
+	background: #f8f8f8;
+}
+
+.staff-side .action-buttons {
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+	width: 100%;
+}
+
+.staff-side .action-buttons button {
+	width: 100%;
+	padding: 10px 14px;
+	border-radius: 8px;
+	cursor: pointer;
+	font-weight: 700;
+	border: none;
+}
+
+/* Responsive adjustments on low resolution screens*/
+@media (max-width: 1024px) {
+	.staff-container {
+		grid-template-columns: 1fr;
+	}
+
+	.staff-side {
+		flex-direction: row;
+	}
+
+	.staff-photo {
+		width: 200px;
+		height: 200px;
+	}
+
+	.staff-side .action-buttons {
+		flex-direction: row;
+	}
+
+	.staff-side .action-buttons button {
+		width: auto;
+		flex: 1;
+	}
+}
+
+@media (max-width: 600px) {
+	.staff-container {
+		grid-template-columns: 1fr;
+	}
+
+	.staff-side {
+		flex-direction: column;
+	}
+
+	.staff-photo {
+		width: 100%;
+		height: 240px;
+	}
+
+	.staff-side .action-buttons {
+		flex-direction: column;
+	}
+
+	.staff-side .action-buttons button {
+		width: 100%;
+	}
+}
+
+/* Overlay for confirmation */
+#overlay-confirm {
+	position: fixed;
+	top:0; 
+	right:0; 
+	bottom:0; 
+	left:0;
+	display: none; /* shown when active */
+	align-items: center;
+	justify-content: center;
+	background: rgba(0,0,0,0.45); /* gray tint for whole screen */
+	z-index: 1200;
+}
+
+.confirm-modal {
+	background: #ffffff;
+	border-radius: 10px;
+	padding: 20px 18px;
+	max-width: 520px;
+	width: calc(100% - 40px);
+	box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+	text-align: center;
+}
+
+.confirm-modal h3{
+	margin:0 0 8px 0;
+	font-size:18px;
+}
+
+.confirm-modal p{
+	margin:6px 0 14px 0;
+	color:var(--color-text);
+}
+
+.confirm-actions{ display:flex; gap:12px; justify-content:center; }
+
+.btn-confirm{
+	padding:10px 16px;
+	border-radius:8px;
+	border:none;
+	cursor:pointer;
+	font-weight:700;
+}
+
+.btn-confirm.confirm{
+	background:#c82333; 
+	color:#fff;
+}
+
+.btn-confirm.cancel{
+	background:var(--color-primary); 
+	color:#fff; 
+}
+
+/* ---- CONSULTA PAGE STYLES ---- */
+.info-section h2 {
+	font-size: 16px;
+	margin: 0 0 12px 0;
+	color: #333;
+	border-bottom: 2px solid var(--color-primary);
+	padding-bottom: 8px;
+}
+
+.info-section .row-group {
+	display: flex;
+	gap: 20px;
+	flex-wrap: wrap;
+	margin-bottom: 10px;
+}
+
+.info-section .row-group span {
+	flex: 1 1 250px;
+	font-size: 14px;
+	color: #333;
+}
+
+#medicamentos-list {
+	margin-bottom: 10px;
+}
+
+#medicamentos-list .row-group {
+	display: flex;
+	gap: 20px;
+	flex-wrap: wrap;
+	margin-bottom: 8px;
+	padding: 8px 0;
+	border-bottom: 1px solid #f0f0f0;
+}
+
+#medicamentos-list .row-group span {
+	flex: 1 1 200px;
+	font-size: 14px;
+	color: #333;
+}
+
+#estudios-list {
+	font-size: 14px;
+	color: #333;
+	line-height: 1.6;
+}
+
+.btn-secondary {
+	background: var(--color-primary);
+	color: #fff;
+	border: none;
+	padding: 10px 14px;
+	border-radius: 8px;
+	cursor: pointer;
+	font-weight: 700;
+}
+
+.btn-secondary:hover {
+	opacity: 0.9;
+}
+
+/* ---- EDIT CONSULTA ---- */
+#consulta-form p {
+	display: flex;
+	flex-direction: column;
+	gap: 4px;
+	flex: 1 1 250px;
+}
+
+#consulta-form p label {
+	font-size: 14px;
+	font-weight: 600;
+	color: #333;
+}
+
+#consulta-form input,
+#consulta-form textarea {
+	background: #fff;
+	border: 1px solid #ddd;
+	padding: 8px 10px;
+	border-radius: 6px;
+	font-size: 14px;
+	font-family: inherit;
+	box-sizing: border-box;
+}
+
+#consulta-form input:focus,
+#consulta-form textarea:focus {
+	outline: none;
+	border-color: var(--color-primary);
+	box-shadow: 0 0 0 2px rgba(79, 114, 255, 0.1);
+}
+
+#consulta-form .row-group {
+	display: flex;
+	gap: 20px;
+	flex-wrap: wrap;
+	margin-bottom: 0px;
+}
+
+#consulta-form .row-group p {
+	flex: 1 1 250px;
+}
+
+#medicamentos-container .row-group {
+	display: flex;
+	gap: 10px;
+	flex-wrap: nowrap;
+	align-items: flex-end;
+	margin-bottom: 10px;
+}
+
+#medicamentos-container .row-group p {
+	flex: 1 1 150px;
+	margin: 0;
+}
+
+#medicamentos-container .row-group input {
+	width: 100%;
+}
+
+/* ---- EDIT ESTUDIO ---- */
+#estudio-form p {
+	display: flex;
+	flex-direction: column;
+	gap: 4px;
+	flex: 1 1 250px;
+}
+
+#estudio-form p label {
+	font-size: 14px;
+	font-weight: 600;
+	color: #333;
+}
+
+#estudio-form input,
+#estudio-form textarea,
+.imagen-input {
+	background: #fff;
+	border: 1px solid #ddd;
+	padding: 8px 10px;
+	border-radius: 6px;
+	font-size: 14px;
+	font-family: inherit;
+	box-sizing: border-box;
+	width: 100%;
+}
+
+#estudio-form input:focus,
+#estudio-form textarea:focus,
+.imagen-input:focus {
+	outline: none;
+	border-color: var(--color-primary);
+	box-shadow: 0 0 0 2px rgba(79, 114, 255, 0.1);
+}
+
+#imagenes-container .row-group {
+	display: flex;
+	gap: 10px;
+	flex-wrap: nowrap;
+	align-items: flex-end;
+	margin-bottom: 8px;
+}
+
+#imagenes-container .row-group input {
+	width: 100%;
+}
+
+.back-link {
+	color: var(--color-primary);
+	text-decoration: none;
+	cursor: pointer;
+	font-weight: 600;
+}
+
+.back-link:hover {
+	text-decoration: underline;
+}
+

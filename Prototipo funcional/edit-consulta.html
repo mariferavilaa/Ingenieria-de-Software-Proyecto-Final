@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Editar Consulta</title>
+
+  <!-- Shared CSS -->
+  <link rel="stylesheet" href="./css/shared.css">
+
+  <!-- Page-specific CSS -->
+  <link rel="stylesheet" href="./css/info.css">
+</head>
+<body>
+
+  <!-- Shared nav -->
+  <nav>
+    <div id="nav-left"></div>
+    <div id="nav-center"></div>
+    <div id="nav-right"></div>
+  </nav>
+
+  <!-- Page content -->
+  <div class="page-container">
+    <div class="top-bar">
+      <button class="back-btn" onclick="history.back()">&#x276E;</button> 
+      <h1 id="page-title">Editar Consulta</h1>
+      <div></div>
+    </div>
+
+    <form id="consulta-form">
+      <!-- PART 1: INFORMACIÓN GENERAL -->
+      <div class="info-section">
+        <h2>Información General</h2>
+        <div class="row-group">
+          <p><label>Médico tratante:</label> <input type="text" id="medico-tratante" /></p>
+          <p><label>Estado:</label> <input type="text" id="estado-consulta" /></p>
+        </div>
+        <div class="row-group">
+          <p><label>Hora de consulta:</label> <input type="text" id="hora-consulta" /></p>
+          <p><label>Diagnóstico:</label> <input type="text" id="diagnostico" /></p>
+        </div>
+        <div class="row-group">
+          <p><label>Motivo de Consulta:</label> <input type="text" id="motivo-consulta" /></p>
+          <p><label>Seguimiento:</label> <input type="text" id="seguimiento" /></p>
+        </div>
+      </div>
+
+      <!-- PART 2: SIGNOS VITALES -->
+      <div class="info-section">
+        <h2>Signos Vitales</h2>
+        <div class="row-group">
+          <p><label>Peso (kg):</label> <input type="text" id="peso" /></p>
+          <p><label>Estatura (cm):</label> <input type="text" id="estatura" /></p>
+        </div>
+        <div class="row-group">
+          <p><label>Presión Arterial (mmHg):</label> <input type="text" id="presion-arterial" /></p>
+          <p><label>Frecuencia Cardíaca (lpm):</label> <input type="text" id="frecuencia-cardiaca" /></p>
+        </div>
+        <div class="row-group">
+          <p><label>Temperatura (°C):</label> <input type="text" id="temperatura" /></p>
+          <p><label>Saturación de oxígeno (%):</label> <input type="text" id="saturacion-oxigeno" /></p>
+        </div>
+        <div class="row-group">
+          <p><label>IMC:</label> <input type="text" id="imc" /></p>
+        </div>
+      </div>
+
+      <!-- PART 3: EXPLORACIÓN FÍSICA -->
+      <div class="info-section">
+        <h2>Exploración Física</h2>
+        <div class="row-group">
+          <p><label>Habitus Exterior:</label> <input type="text" id="habitus-exterior" /></p>
+        </div>
+        <div class="row-group">
+          <p><label>Cabeza, Oídos y nariz:</label> <input type="text" id="cabeza-oidos-nariz" /></p>
+        </div>
+        <div class="row-group">
+          <p><label>Piel:</label> <input type="text" id="piel" /></p>
+        </div>
+        <div class="row-group">
+          <p><label>Ojos:</label> <input type="text" id="ojos" /></p>
+        </div>
+        <div class="row-group">
+          <p><label>Tórax:</label> <input type="text" id="torax" /></p>
+        </div>
+        <div class="row-group">
+          <p><label>Abdomen:</label> <input type="text" id="abdomen" /></p>
+        </div>
+        <div class="row-group">
+          <p><label>Extremidades:</label> <input type="text" id="extremidades" /></p>
+        </div>
+        <div class="row-group">
+          <p><label>Neurológico:</label> <input type="text" id="neurologico" /></p>
+        </div>
+      </div>
+
+      <!-- PART 4: ESTUDIOS SOLICITADOS -->
+      <div class="info-section">
+        <h2>Estudios Solicitados</h2>
+        <textarea id="estudios-input" placeholder="Ingresa los estudios, uno por línea" style="width: 100%; height: 120px; padding: 8px; border: 1px solid #ddd; border-radius: 6px; font-family: inherit;"></textarea>
+      </div>
+
+      <!-- PART 5: RECETA MÉDICA -->
+      <div class="info-section">
+        <h2>Receta Médica</h2>
+        <div class="row-group">
+          <p><label>Recomendaciones:</label> <textarea id="recomendaciones" placeholder="Ingresa recomendaciones" style="width: 100%; height: 80px; padding: 8px; border: 1px solid #ddd; border-radius: 6px; font-family: inherit;"></textarea></p>
+        </div>
+
+        <h3 style="margin-top: 14px; margin-bottom: 10px;">Medicamentos</h3>
+        <div id="medicamentos-container"></div>
+        <button type="button" id="add-medicamento" class="btn-primary" style="margin-top: 10px;">+ Agregar Medicamento</button>
+
+        <div class="row-group" style="margin-top: 14px;">
+          <p><label>Firma:</label> <input type="text" id="firma" /></p>
+        </div>
+      </div>
+
+      <!-- ACTION BUTTONS -->
+      <div class="action-buttons">
+        <button type="button" class="cancel-btn" id="cancelBtn">Cancelar</button>
+        <button type="submit" class="confirm-btn" id="confirmBtn">Confirmar</button>
+      </div>
+    </form>
+  </div>
+
+  <!-- Shared JS (nav) -->
+  <script src="./javascript/shared.js"></script>
+
+  <!-- Page JS -->
+  <script src="./javascript/edit-consulta.js"></script>
+</body>
+</html>
