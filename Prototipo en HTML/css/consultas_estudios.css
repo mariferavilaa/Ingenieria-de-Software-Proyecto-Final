@@ -1,0 +1,89 @@
+/* Search row layout */
+.search-row{
+  display:flex;
+  gap:20px;
+  align-items:center;
+  justify-content:space-between;
+  margin-top:18px;
+  margin-bottom:10px;
+}
+
+.search-left{
+  flex:1;
+}
+
+.label-search{
+  display:block;
+  margin-bottom:8px;
+  font-weight:700;
+  color:var(--color-text);
+}
+
+#consulta-search{
+  width:100%;
+  padding:12px 14px;
+  border-radius:8px;
+  border:1px solid #cfcfcf;
+  font-size:14px;
+}
+
+/* Add patient button */
+.btn-primary{
+  background:var(--color-primary);
+  color:white;
+  border:none;
+  padding:12px 20px;
+  border-radius:10px;
+  cursor:pointer;
+  font-weight:700;
+}
+
+/* Page-specific styles for consultas */
+.consultas-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin-top: 12px;
+}
+
+.consulta-card {
+  background: #ffffff;
+  border: 1px solid rgba(0,0,0,0.08);
+  border-radius: 8px;
+  padding: 12px 14px;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+  cursor: pointer;
+}
+
+.consulta-card:hover {
+    background: #cfcfcf;
+    
+}
+
+.consulta-date {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 8px;
+  display:block;
+}
+
+.consulta-top-row {
+  display:flex;
+  gap: 12px;
+  align-items:center;
+  margin-bottom:8px;
+}
+
+.consulta-top-row span {
+  font-size: 0.9rem;
+  color: #444;
+}
+
+.consulta-razon {
+  font-size: 0.9rem;
+  color: #222;
+  margin-top: 6px;
+}
+
+.results-box { width: 100%; }

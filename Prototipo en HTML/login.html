@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/login.css">
+    <title>Inicio de Sesión</title>
+</head>
+
+<body>
+
+    <div class="login-container">
+
+        <!-- Logo -->
+        <img src="./images/logo.png" alt="Logo" class="logo">
+
+        <!-- Correo -->
+        <label for="correo">Correo electrónico</label>
+        <input type="text" id="correo" placeholder="Escribe tu correo">
+
+        <!-- Contraseña -->
+        <label for="password">Contraseña</label>
+        <div class="password-wrapper">
+            <input type="password" id="password" placeholder="Escribe tu contraseña">
+            <img src="./images/eye.png" alt="mostrar" class="password-visibility" onclick="togglePassword()"></img>
+        </div>
+
+        <!-- Botón de iniciar sesión -->
+        <button onclick="login()">Iniciar sesión</button>
+    </div>
+
+    <script src="./javascript/login.js"></script>
+
+</body>
+</html>

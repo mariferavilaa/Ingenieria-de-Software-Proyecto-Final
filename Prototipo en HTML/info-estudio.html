@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Detalles del Estudio</title>
+
+  <!-- Shared CSS -->
+  <link rel="stylesheet" href="./css/shared.css">
+
+  <!-- Page-specific CSS -->
+  <link rel="stylesheet" href="./css/info.css">
+</head>
+<body>
+
+  <!-- Shared nav -->
+  <nav>
+    <div id="nav-left"></div>
+    <div id="nav-center"></div>
+    <div id="nav-right"></div>
+  </nav>
+
+  <!-- Page content -->
+  <div class="page-container">
+    <div class="top-bar">
+      <button class="back-btn" onclick="history.back()">&#x276E;</button>
+      <h1 id="page-title">Detalles del Estudio</h1>
+      <div></div>
+    </div>
+
+    <!-- Información General -->
+    <div class="info-section">
+      <h2>Información General</h2>
+      <div class="row-group">
+        <span><b>ID Cita:</b> <span id="estudio-id-cita"></span></span>
+        <span><b>ID del Estudio:</b> <span id="estudio-id-estudio"></span></span>
+      </div>
+      <div class="row-group">
+        <span><b>Fecha de Solicitud:</b> <span id="estudio-fecha-solicitud"></span></span>
+        <span><b>Fecha de Resultado:</b> <span id="estudio-fecha-resultado"></span></span>
+      </div>
+    </div>
+
+    <!-- Imagenes Asociadas -->
+    <div class="info-section">
+      <h2>Imágenes Asociadas</h2>
+      <div id="estudio-imagenes-list"></div>
+    </div>
+
+    <!-- Interpretación del Médico -->
+    <div class="info-section">
+      <h2>Interpretación del Médico</h2>
+      <p><span id="estudio-interpretacion"></span></p>
+    </div>
+
+    <!-- ACTION BUTTONS -->
+    <div class="action-buttons" id="action-buttons-container">
+      <button class="delete-btn" id="deleteBtn" onclick="deleteEstudio()">Eliminar</button>
+      <button class="edit-btn" id="edit-btn" onclick="editEstudio()">Editar</button>
+    </div>
+  </div>
+
+  <!-- Confirmation overlay -->
+  <div id="overlay-confirm" aria-hidden="true">
+    <div class="confirm-modal" role="dialog" aria-labelledby="confirm-title" aria-describedby="confirm-desc">
+      <h3 id="confirm-title">Estás a punto de eliminar el estudio</h3>
+      <p id="confirm-desc"><strong id="confirm-estudio-name">Nombre del estudio</strong></p>
+      <div class="confirm-actions">
+        <button class="btn-confirm confirm" id="confirmDeleteBtn">Confirmar</button>
+        <button class="btn-confirm cancel" id="cancelDeleteBtn">Cancelar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Shared JS (renders nav) -->
+  <script src="./javascript/shared.js"></script>
+
+  <!-- Page JS -->
+  <script src="./javascript/info-estudio.js"></script>
+
+</body>
+</html>

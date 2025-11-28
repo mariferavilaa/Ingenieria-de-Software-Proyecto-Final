@@ -1,0 +1,152 @@
+:root{
+  /* Shared variables (they should affect all pages) */
+  --font-family: "Inter", "Segoe UI", Roboto, Arial, sans-serif;
+  --font-size-base: 16px;
+  --nav-height: 64px;
+
+  --color-primary: #4f72ff;
+  --color-accent: #e83b3b;
+  --color-bg: #ffffff;
+  --color-panel-bg: rgba(255,255,255,0.95);
+  --color-text: #0b0b0b;
+  --color-muted: #6b6b6b;
+
+  --radius: 8px;
+  --gap: 12px;
+  --container-max-width: 75vw;
+}
+
+*{box-sizing:border-box}
+html,body {
+    height:100%;
+    margin:0;
+    font-family:var(--font-family);
+    font-size:var(--font-size-base);
+    color:var(--color-text);
+    background:var(--color-bg)
+}
+
+/* Shared nav */
+/* ---------- GENERAL NAV LAYOUT ---------- */
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr; /* left - center - right */
+  align-items: center;
+  padding: 10px 20px;
+  background-color: var(--color-primary);
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+}
+
+/* ---------- LEFT IMAGE ---------- */
+#nav-left {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.nav-logo {
+    height: 45px;
+    width: auto;
+}
+
+/* ---------- CENTER BUTTONS (admin only) ---------- */
+#nav-center {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+}
+
+#nav-center .nav-btn {
+    padding: 8px 14px;
+    border: none;
+    background-color: transparent;
+    color: white;
+    font-size: 15px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.08s ease;
+}
+
+/* hover */
+#nav-center .nav-btn:hover {
+    background-color: rgba(255,255,255,0.12);
+}
+
+/* Active state: white background + primary-colored text */
+#nav-center .nav-btn.active {
+    background: white;
+    color: var(--color-primary);
+    box-shadow: 0 1px 0 rgba(0,0,0,0.06) inset;
+}
+
+/* ---------- RIGHT ACCOUNT ---------- */
+#nav-right {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+/* account image */
+.nav-account{
+  border-radius: 999px; /* Circle */
+  object-fit: cover;
+}
+
+/* Responsive container used in pages */
+.page-container{
+  max-width:var(--container-max-width);
+  margin: 20px auto;
+  padding: 0 18px;
+}
+
+/* Utility */
+.hidden{display:none}
+
+/* Overlay / confirmation */
+#overlay-confirm {
+  position: fixed;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0,0,0,0.45);
+  z-index: 1200;
+}
+
+#overlay-confirm.active {
+  display: flex;
+}
+
+.confirm-modal {
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 20px 18px;
+  max-width: 520px;
+  width: calc(100% - 40px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+  text-align: center;
+}
+
+.confirm-modal h3{
+  margin: 0 0 8px 0;
+  font-size: 18px;
+}
+
+.confirm-modal p{
+  margin: 6px 0 14px 0;
+  color: var(--color-text);
+}
+
+/* small success message */
+.delete-success {
+	background: #e9f7ef;
+	color: #1b6b3a;
+	border: 1px solid #bde6c6;
+	padding: 12px 14px;
+	border-radius: 8px;
+	margin-bottom: 12px;
+}

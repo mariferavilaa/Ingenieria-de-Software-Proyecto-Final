@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Editar Estudio</title>
+
+  <!-- Shared CSS -->
+  <link rel="stylesheet" href="./css/shared.css">
+
+  <!-- Page-specific CSS -->
+  <link rel="stylesheet" href="./css/info.css">
+</head>
+<body>
+
+  <!-- Shared nav -->
+  <nav>
+    <div id="nav-left"></div>
+    <div id="nav-center"></div>
+    <div id="nav-right"></div>
+  </nav>
+
+  <!-- Page content -->
+  <div class="page-container">
+    <div class="top-bar">
+      <button class="back-btn" onclick="history.back()">&#x276E;</button>
+      <h1 id="page-title">Editar Estudio</h1>
+      <div></div>
+    </div>
+
+    <form id="estudio-form">
+      <!-- Información General -->
+      <div class="info-section">
+        <h2>Información General</h2>
+        <div class="row-group">
+          <p>
+            <label>ID Cita:</label>
+            <input type="text" id="estudio-id-cita-input" placeholder="Ej: C001" />
+          </p>
+          <p>
+            <label>ID del Estudio:</label>
+            <input type="text" id="estudio-id-estudio-input" placeholder="Ej: EST001" />
+          </p>
+        </div>
+        <div class="row-group">
+          <p>
+            <label>Fecha de Solicitud:</label>
+            <input type="text" id="estudio-fecha-solicitud-input" placeholder="Ej: 09/11/2025" />
+          </p>
+          <p>
+            <label>Fecha de Resultado:</label>
+            <input type="text" id="estudio-fecha-resultado-input" placeholder="Ej: 11/11/2025" />
+          </p>
+        </div>
+      </div>
+
+      <!-- Imágenes Asociadas -->
+      <div class="info-section">
+        <h2>Imágenes Asociadas</h2>
+        <div id="imagenes-container"></div>
+        <button type="button" id="add-imagen" class="btn-primary" style="margin-top:8px">+ Agregar Imagen</button>
+      </div>
+
+      <!-- Interpretación del Médico -->
+      <div class="info-section">
+        <h2>Interpretación del Médico</h2>
+        <p>
+          <label>Interpretación:</label>
+          <textarea id="estudio-interpretacion-input" style="width:100%; min-height:80px; padding:8px; border:1px solid #ddd; border-radius:6px; font-family:inherit;"></textarea>
+        </p>
+      </div>
+
+      <!-- ACTION BUTTONS -->
+      <div class="action-buttons">
+        <button type="button" class="cancel-btn" id="cancelBtn">Cancelar</button>
+        <button type="submit" class="confirm-btn" id="confirmBtn">Confirmar</button>
+      </div>
+    </form>
+  </div>
+
+  <!-- Shared JS (renders nav) -->
+  <script src="./javascript/shared.js"></script>
+
+  <!-- Page JS -->
+  <script src="./javascript/edit-estudio.js"></script>
+
+</body>
+</html>

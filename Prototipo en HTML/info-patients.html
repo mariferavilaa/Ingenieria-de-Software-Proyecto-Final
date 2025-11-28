@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Detalles del Paciente</title>
+<!-- Shared CSS first -->
+<link rel="stylesheet" href="./css/shared.css">
+
+<!-- Page-specific CSS -->
+<link rel="stylesheet" href="./css/info.css">
+</head>
+<body>
+    <nav>
+        <div id="nav-left"></div>
+        <div id="nav-center"></div>
+        <div id="nav-right"></div>
+    </nav>
+
+    <div class="page-container">
+        <!-- Top header row -->
+        <div class="top-bar">
+          <!--&#x276E; should be better than having an img of an arrow-->
+            <button class="back-btn" onclick="history.back()">&#x276E;</button> 
+            <h1>Detalles del paciente</h1>
+            <div class="top-links">
+                <button class="top-link" onclick="location.href='historial-medico.html'">Historial médico</button>
+                <button class="top-link" onclick="location.href='consultas.html'">Consultas</button>
+                <button class="top-link" onclick="location.href='estudio.html'">Estudios</button>
+            </div>
+        </div>
+
+        <!-- Patient information block (JS will add them) -->
+        <div class="info-section">
+            <p><strong>ID:</strong> <span id="pid"></span></p>
+            <p><strong>CURP:</strong> <span id="pcurp"></span></p>
+
+            <div class="row-group">
+                <p><strong>Nombre:</strong> <span id="pnombre"></span></p>
+                <p><strong>Sexo:</strong> <span id="psexo"></span></p>
+                <p><strong>Edad:</strong> <span id="pedad"></span></p>
+                <p><strong>Fecha de Nacimiento:</strong> <span id="pfn"></span></p>
+                <p><strong>Seguro Médico:</strong> <a id="pseguro" href="#"></a></p>
+            </div>
+
+            <p><strong>Dirección:</strong> <span id="pdireccion"></span></p>
+
+            <div class="row-group">
+                <p><strong>Teléfono:</strong> <span id="ptelefono"></span></p>
+                <p><strong>Correo:</strong> <span id="pcorreo"></span></p>
+            </div>
+        </div>
+
+        <!-- Emergency contact -->
+        <h3 class="sub-title">Contacto de Emergencia</h3>
+
+        <div class="info-section">
+            <p><strong>CURP:</strong> <span id="ecurp"></span></p>
+
+            <div class="row-group">
+                <p><strong>Nombre:</strong> <span id="enombre"></span></p>
+                <p><strong>Sexo:</strong> <span id="esexo"></span></p>
+                <p><strong>Edad:</strong> <span id="eedad"></span></p>
+                <p><strong>Fecha de Nacimiento:</strong> <span id="efn"></span></p>
+            </div>
+
+            <p><strong>Dirección:</strong> <span id="edireccion"></span></p>
+
+            <div class="row-group">
+                <p><strong>Teléfono:</strong> <span id="etelefono"></span></p>
+                <p><strong>Correo:</strong> <span id="ecorreo"></span></p>
+            </div>
+        </div>
+
+        <!-- Buttons -->
+        <div class="action-buttons" id="actionButtons">
+            <button class="delete-btn">Eliminar</button>
+            <button class="edit-btn">Editar</button>
+        </div>
+    </div>
+
+<!-- Shared JS (renders nav) -->
+<script src="./javascript/shared.js"></script>
+
+<!-- Page JS -->
+<script src="./javascript/info-patients.js"></script>
+
+</body>
+</html>
+
+<!-- Confirmation overlay (hidden for now) -->
+<div id="overlay-confirm" aria-hidden="true">
+    <div class="confirm-modal" role="dialog" aria-labelledby="confirm-title" aria-describedby="confirm-desc">
+        <h3 id="confirm-title">Estás a punto de eliminar al paciente</h3>
+        <p id="confirm-desc"><strong id="confirm-patient-name">Nombre del paciente</strong></p>
+        <div class="confirm-actions">
+            <button class="btn-confirm confirm" id="confirmDeleteBtn">Confirmar</button>
+            <button class="btn-confirm cancel" id="cancelDeleteBtn">Cancelar</button>
+        </div>
+    </div>
+</div>
